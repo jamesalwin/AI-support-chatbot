@@ -2,103 +2,183 @@
   "intents": [
     {
       "tag": "greeting",
-      "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good evening", "Hey there"],
-      "responses": ["Hello! How can I help you today?", "Hi there! What can I do for you?", "Hey! Need any assistance?"]
+      "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good afternoon", "Good evening", "What's up?", "How's it going?"],
+      "responses": ["Hello! How can I assist you today?", "Hi there! What can I help you with?", "Hey! How may I help you?"]
     },
     {
       "tag": "goodbye",
-      "patterns": ["Bye", "Goodbye", "See you later", "Talk to you later", "Catch you later"],
-      "responses": ["Goodbye! Have a great day!", "See you soon!", "Take care and see you later!"]
+      "patterns": ["Bye", "Goodbye", "See you later", "Catch you later", "Take care"],
+      "responses": ["Goodbye! Have a great day!", "See you later!", "Take care and come back soon!"]
     },
     {
       "tag": "thanks",
-      "patterns": ["Thanks", "Thank you", "Thanks a lot", "Thanks so much", "Much appreciated"],
-      "responses": ["You're welcome!", "Happy to help!", "Anytime!"]
-    },
-    {
-      "tag": "name_query",
-      "patterns": ["What's your name?", "Who are you?", "Tell me your name", "May I know your name?"],
-      "responses": ["I'm your virtual assistant.", "You can call me SupportBot!", "I’m your friendly chatbot assistant."]
+      "patterns": ["Thanks", "Thank you", "Much appreciated", "Thanks a lot", "Thank you so much"],
+      "responses": ["You're welcome!", "Happy to help!", "No problem!"]
     },
     {
       "tag": "order_status",
-      "patterns": ["Where is my order?", "Track my order", "Order status", "Has my order shipped?", "When will my order arrive?"],
-      "responses": ["Can you please provide your order ID so I can check?", "Sure! Please share your order number to track it."]
+      "patterns": ["Where is my order?", "Track my order", "Order status", "Has my package shipped?", "When will my order arrive?"],
+      "responses": ["Could you please provide your order ID so I can check?", "Sure! Please share your order number."]
     },
     {
       "tag": "order_status_auto",
-      "patterns": ["Order ID 12345", "My order number is 54321", "Track order 98765", "It's 111222"],
-      "responses": ["Got it! Checking the status for Order ID {order_id}... Please wait.", "Order ID {order_id} is currently being processed."]
-    },
-    {
-      "tag": "cancel_order",
-      "patterns": ["Cancel my order", "I want to cancel order", "Can I cancel my purchase?", "Cancel order 12345"],
-      "responses": ["Please provide your order ID to proceed with cancellation.", "Sure! Could you share the order number you want to cancel?"]
+      "patterns": ["Order ID 12345", "My order number is 98765", "Order is 56789"],
+      "responses": ["Your order {order_id} is on the way and should arrive in 2-3 days.", "Order {order_id} has been shipped! Expected delivery: 2 days."]
     },
     {
       "tag": "return_policy",
-      "patterns": ["What is your return policy?", "How do I return a product?", "Can I return my order?", "Return instructions"],
-      "responses": ["We accept returns within 30 days of delivery. The product should be unused and in its original packaging."]
+      "patterns": ["What's your return policy?", "Can I return an item?", "How do I return a product?", "Return procedure"],
+      "responses": ["We accept returns within 30 days of purchase. Please visit our returns page for more info.", "You can return products within 30 days in their original packaging."]
     },
     {
-      "tag": "shipping_info",
-      "patterns": ["What are your shipping options?", "How long does delivery take?", "Do you offer free shipping?", "Delivery details"],
-      "responses": ["We offer standard and express shipping. Standard takes 5-7 days, express takes 2-3 days."]
-    },
-    {
-      "tag": "product_availability",
-      "patterns": ["Is this product available?", "Do you have stock?", "Can I buy this now?", "Is this item in stock?"],
-      "responses": ["Please share the product name or ID to check availability.", "Sure! Which product are you asking about?"]
+      "tag": "refund_policy",
+      "patterns": ["How do I get a refund?", "When will I get my refund?", "Refund status", "Refund process"],
+      "responses": ["Refunds are processed within 5-7 business days after we receive the returned product.", "Your refund will be credited to your original payment method within 7 business days."]
     },
     {
       "tag": "payment_methods",
-      "patterns": ["What payment methods do you accept?", "Do you accept PayPal?", "Can I pay with credit card?", "Payment options"],
-      "responses": ["We accept credit/debit cards, PayPal, and UPI payments.", "You can pay via card, PayPal, or net banking."]
+      "patterns": ["What payment methods do you accept?", "Can I pay with PayPal?", "Do you accept credit cards?"],
+      "responses": ["We accept credit cards, debit cards, PayPal, and UPI payments.", "Yes! We accept Visa, MasterCard, PayPal, and more."]
     },
     {
-      "tag": "complaint",
-      "patterns": ["I have a complaint", "I want to report an issue", "This product is defective", "I'm not happy with the service"],
-      "responses": ["I'm sorry to hear that. Could you please describe the issue in detail?", "I apologize for the inconvenience. Can you share more about the problem?"]
+      "tag": "shipping_info",
+      "patterns": ["Do you offer free shipping?", "How much is shipping?", "Shipping cost", "Shipping details"],
+      "responses": ["We offer free shipping for orders above $50.", "Standard shipping charges apply for orders under $50."]
     },
     {
-      "tag": "smalltalk_how_are_you",
-      "patterns": ["How are you?", "How's it going?", "Are you fine?", "How do you do?"],
-      "responses": ["I'm doing great! Thanks for asking. How about you?", "All good here! How are you today?"]
+      "tag": "cancel_order",
+      "patterns": ["I want to cancel my order", "Cancel my order", "Stop my shipment"],
+      "responses": ["Please provide your order ID so I can check if it's eligible for cancellation."]
     },
     {
-      "tag": "smalltalk_weather",
-      "patterns": ["What's the weather like?", "Is it raining?", "How's the weather today?", "Weather update"],
-      "responses": ["I can’t check the weather right now, but I hope it's nice where you are!", "Not sure about the weather, but I’m always sunny here!"]
-    },
-    {
-      "tag": "smalltalk_joke",
-      "patterns": ["Tell me a joke", "Make me laugh", "Say something funny"],
-      "responses": ["Why don’t skeletons fight each other? They don’t have the guts!", "I tried to catch some fog… but I mist."]
-    },
-    {
-      "tag": "smalltalk_age",
-      "patterns": ["How old are you?", "What is your age?", "When were you created?"],
-      "responses": ["I’m timeless!", "Age is just a number, and for me, it’s infinite."]
-    },
-    {
-      "tag": "smalltalk_creator",
-      "patterns": ["Who created you?", "Who made you?", "Who developed you?"],
-      "responses": ["I was created by a team of developers to assist you!", "A group of smart humans built me to help you."]
-    },
-    {
-      "tag": "technical_support",
-      "patterns": ["My app is not working", "Website is down", "I can't log in", "Facing technical issues"],
-      "responses": ["I’m sorry you’re facing this issue. Can you describe the problem in detail?", "Let’s fix this. What exactly seems to be the problem?"]
+      "tag": "account_help",
+      "patterns": ["I can't log in", "Forgot my password", "Help with account login", "Password reset"],
+      "responses": ["You can reset your password using the 'Forgot Password' option on the login page.", "Please ensure your credentials are correct or reset your password."]
     },
     {
       "tag": "store_hours",
-      "patterns": ["What are your store hours?", "When are you open?", "Opening and closing time"],
-      "responses": ["Our store is open from 9 AM to 9 PM every day.", "We operate daily from 9 AM to 9 PM."]
+      "patterns": ["What are your working hours?", "When do you open?", "Are you open on weekends?"],
+      "responses": ["We are open from 9 AM to 8 PM, Monday to Saturday.", "Our hours are 9 AM to 8 PM, Monday–Saturday."]
     },
     {
-      "tag": "location",
-      "patterns": ["Where is your store located?", "Store address", "Shop location", "Where can I find you?"],
-      "responses": ["We are located at 123 Main Street, YourCity.", "Our store is at 123 Main Street, and we also operate online."]
+      "tag": "contact_support",
+      "patterns": ["How do I contact customer support?", "Customer care number", "Support email", "Talk to a human"],
+      "responses": ["You can call us at 123-456-7890 or email support@example.com.", "Reach our support team at 123-456-7890."]
+    },
+    {
+      "tag": "complaint",
+      "patterns": ["I want to complain", "File a complaint", "Your service is bad", "I am not happy with the service"],
+      "responses": ["I'm sorry to hear that. Please share the details of your complaint so we can resolve it."]
+    },
+    {
+      "tag": "product_info",
+      "patterns": ["Tell me about product X", "Does this product come in blue?", "Is this product available?", "Product details"],
+      "responses": ["Could you please share the product ID or name so I can check its details?"]
+    },
+    {
+      "tag": "discounts",
+      "patterns": ["Any discounts available?", "Do you have sales?", "Current offers", "Promo codes"],
+      "responses": ["We currently have up to 30% off on selected items!", "You can find our latest offers on the 'Deals' section of our website."]
+    },
+    {
+      "tag": "track_refund",
+      "patterns": ["Track my refund", "Refund status check", "Where is my refund?"],
+      "responses": ["Please provide your refund request number so I can check."]
+    },
+    {
+      "tag": "greeting_nice",
+      "patterns": ["How are you?", "Hope you're doing well", "How's your day?"],
+      "responses": ["I'm great, thank you! How about you?", "Doing well! How can I help today?"]
+    },
+    {
+      "tag": "jokes",
+      "patterns": ["Tell me a joke", "Make me laugh", "I want to hear a joke"],
+      "responses": ["Why don't skeletons fight each other? They don't have the guts!", "What do you call fake spaghetti? An impasta!"]
+    },
+    {
+      "tag": "weather",
+      "patterns": ["What's the weather?", "Weather update", "How's the weather today?"],
+      "responses": ["I can't check live weather, but you can find it on your weather app!", "It depends on your location — check your local forecast."]
+    },
+    {
+      "tag": "time",
+      "patterns": ["What's the time?", "Tell me the current time", "What time is it?"],
+      "responses": ["I can't access the clock right now, but you can check your device time."]
+    },
+    {
+      "tag": "bot_info",
+      "patterns": ["Who are you?", "What are you?", "Are you a bot?"],
+      "responses": ["I'm an AI-powered chatbot here to assist you with your queries!", "I'm your virtual assistant."]
+    },
+    {
+      "tag": "creator",
+      "patterns": ["Who made you?", "Who created you?", "Your developer"],
+      "responses": ["I was created by a developer to help customers like you!", "I was designed and built by my amazing creator."]
+    },
+    {
+      "tag": "fun_fact",
+      "patterns": ["Tell me a fun fact", "Fun fact please", "Give me a random fact"],
+      "responses": ["Did you know honey never spoils? Archaeologists have found 3000-year-old honey still edible!", "Bananas are berries, but strawberries aren't!"]
+    },
+    {
+      "tag": "motivation",
+      "patterns": ["Motivate me", "Say something inspiring", "Inspire me"],
+      "responses": ["Believe in yourself — you are capable of amazing things!", "Every expert was once a beginner. Keep going!"]
+    },
+    {
+      "tag": "help",
+      "patterns": ["Help", "I need assistance", "Can you help me?"],
+      "responses": ["Sure! Please tell me what you need help with.", "I'm here to assist. What's your question?"]
+    },
+    {
+      "tag": "faq_shipping_time",
+      "patterns": ["How long does shipping take?", "Delivery time", "When will my order arrive?"],
+      "responses": ["Standard shipping takes 3-5 business days.", "You can expect delivery within 3–5 business days."]
+    },
+    {
+      "tag": "faq_international_shipping",
+      "patterns": ["Do you ship internationally?", "Can you ship abroad?", "Overseas shipping"],
+      "responses": ["Yes, we ship to many countries worldwide. Additional charges may apply."]
+    },
+    {
+      "tag": "faq_warranty",
+      "patterns": ["Is there a warranty?", "Product warranty", "How long is the warranty?"],
+      "responses": ["Our products come with a 1-year warranty for manufacturing defects."]
+    },
+    {
+      "tag": "faq_exchange",
+      "patterns": ["Can I exchange this?", "Product exchange", "Exchange policy"],
+      "responses": ["Exchanges are allowed within 30 days for unused items in original packaging."]
+    },
+    {
+      "tag": "product_availability",
+      "patterns": ["Is this in stock?", "Available now?", "Do you have this item?"],
+      "responses": ["Please provide the product name or ID to check availability."]
+    },
+    {
+      "tag": "faq_support_languages",
+      "patterns": ["Do you support other languages?", "Can I chat in Spanish?", "Multilingual support"],
+      "responses": ["Currently, we support English only. More languages coming soon!"]
+    },
+    {
+      "tag": "track_complaint",
+      "patterns": ["Check my complaint status", "Complaint number", "Track my issue"],
+      "responses": ["Please provide your complaint ID so I can check."]
+    },
+    {
+      "tag": "feedback",
+      "patterns": ["I have feedback", "Want to share feedback", "Your service is great", "I love your service"],
+      "responses": ["Thank you for your feedback!", "We appreciate your thoughts!"]
+    },
+    {
+      "tag": "apology",
+      "patterns": ["Sorry", "My bad", "Apologies"],
+      "responses": ["No problem at all!", "That's alright, don't worry about it."]
+    },
+    {
+      "tag": "unknown",
+      "patterns": ["asdasd", "blah blah", "random text"],
+      "responses": ["I'm not sure I understand. Could you rephrase?", "Sorry, I didn’t get that. Could you say it differently?"]
     }
   ]
 }
