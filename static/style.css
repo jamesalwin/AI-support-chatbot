@@ -1,0 +1,58 @@
+/* static/style.css */
+* { box-sizing: border-box; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+body { background:#f4f6f8; margin:0; padding:20px; display:flex; justify-content:center; align-items:center; min-height:100vh; }
+
+.chat-container {
+  width:100%;
+  max-width:760px;
+  background: #ffffff;
+  border-radius:12px;
+  box-shadow: 0 8px 30px rgba(13,30,60,0.08);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+.header { padding:18px 20px; border-bottom:1px solid #eef2f5; }
+.title { font-size:18px; font-weight:700; color:#102a43; }
+.subtitle { font-size:13px; color:#627d98; margin-top:6px; }
+
+.chat-window { padding:16px; height:480px; overflow:auto; display:flex; flex-direction:column; gap:12px; background: linear-gradient(180deg,#fbfdff,#f7fafc); }
+
+.message-row { display:flex; gap:10px; align-items:flex-end; }
+.message-row.user { justify-content:flex-end; }
+.avatar { width:38px; height:38px; border-radius:50%; background:#dbeafe; display:inline-block; flex-shrink:0; }
+.avatar.bot { background: #fde68a; }
+
+.bubble {
+  max-width:70%;
+  padding:10px 12px;
+  border-radius:14px;
+  background:#f1f5f9;
+  color:#0b2e4a;
+  box-shadow:0 2px 8px rgba(11,46,74,0.04);
+}
+
+.message-row.user .bubble {
+  background:#2b7cff; color:white; border-bottom-right-radius:4px; border-bottom-left-radius:14px;
+}
+
+.composer { padding:14px; display:flex; gap:8px; border-top:1px solid #eef2f5; }
+.composer input { flex:1; padding:12px 14px; font-size:15px; border-radius:10px; border:1px solid #e6eef7; outline:none; }
+.composer button { padding:10px 16px; border-radius:10px; border:0; background:#2b7cff; color:white; font-weight:600; cursor:pointer; }
+
+.typing {
+  display:inline-block;
+  width:34px;
+  text-align:left;
+}
+.typing span { display:inline-block; width:6px; height:6px; margin-right:4px; background:#9aaed9; border-radius:50%; animation: blink 1s infinite; opacity:0.6; }
+.typing span:nth-child(2){ animation-delay:0.2s; }
+.typing span:nth-child(3){ animation-delay:0.4s; }
+
+@keyframes blink { 0% { opacity:0.2; transform:translateY(0);} 50% { opacity:1; transform:translateY(-4px);} 100% { opacity:0.2; transform:translateY(0);} }
+
+@media (max-width:640px){
+  .chat-container { border-radius:0; height:100vh; max-width:100%; }
+  .chat-window { height:calc(100vh - 160px); padding:12px; }
+}
